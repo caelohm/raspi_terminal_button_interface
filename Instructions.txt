@@ -1,0 +1,88 @@
+Pi means Raspberry Pi
+Run means type into terminal and press enter.
+ALWAYS EDIT FILES IN NOTEPAD++
+
+
+-Format SD-Card using Raspberry Pi Imager. Install Raspbian.
+
+-Plug SD-Card into Pi and power it on. Wait 30 seconds.
+
+
+Two ways to start. Either:
+	1. Turn off Pi and plug SD-Card into computer.
+
+	2. Add file named "ssh" no extension to Root of SD.
+
+	3. Open wpa_supplicant.conf file in Setup Files. Edit 
+		ssid and psk variables (ssid is the name of the 
+		wifi you connect to, psk is the password).
+	
+	4. Copy wpa_supplicant.conf to Root of SD.
+
+	5. Eject SD, plug into Pi and power on.
+
+	6. SSH into Pi using "ssh pi@raspberrypi.local" in terminal.
+	
+Or easier/error prone method:
+	1. Connect Pi to HDMI and wired keyboard.
+	
+	2. Wait for GUI to show up on display.
+	
+	3. Press Ctrl+Alt+F1 to open terminal.
+
+
+Next:	
+-First thing's first, run "sudo apt update".
+
+-Run "sudo raspi-config".
+
+-In Localization Options, configure keyboard. Make sure it matches
+	the country and brand if possible.
+
+-In System Options, configure Wireless LAN, Audio, Hostname, 
+	Password, and Boot / Auto Login (select Console Autologin).
+	
+-In Interface Options, enable SSH.
+
+-Reboot using "sudo reboot".
+	
+
+Next:
+-Open windows terminal and navigate to directory before RaspVideo folder
+	using cd (change directory) and dir (list directory).
+	
+-Transfer VLCP.py and config.txt to Pi using "scp VLCP.py config.txt pi@caelohm.local:~/Documents/"
+	(hostname for other people).
+	
+-Move config.txt on Pi using "sudo mv ~/Documents/RaspVideo/config.txt /boot/"
+	
+
+Next:
+-Transfer windows video files to Videos using "scp -r <space separated folder names to transfer> pi@caelohm.local:~/Videos/"
+	in directory of Videos you want to transfer. WARNING: Pi Zero W does not support H.265 codec, must convert to H.264.
+	
+Next:
+-That is basically it! You may have to install some package that is used in VLCP.py. If you do, run sudo pip3 install <package>.
+
+
+EXTRA:
+-ssh into Pi from terminal in Windows using "ssh pi@hostname.local"
+	**If this doesn't work, make sure Pi is connected to wifi using "iwgetid".
+	Make sure windows is connected to the same network and isn't using
+	a vpn. Try in new windows terminal. If that doesn't work, run 
+	"sudo apt-get install avahi-daemon" and make sure Bonjour is installed 
+	on Windows. If that doesn't work, delete "known_hosts" in C:\Users\<user>\.ssh\
+	If it STILL doesn't work, find raspberry pi ip using "ifconfig".
+	The Pi ip is next to inet. Replace hostname with ip (not preferred).**
+	
+-Apparently, to reference a file with spaces in bash (scp), you have to put the path
+	in two quotations, ie. "'<path>'".
+	
+-You can also use rsync in Ubuntu terminal instead of scp. Windows files are located in 
+	/mnt/ directory of Ubuntu. If you do it this way, rsync will change the color of the files 
+	for the worse. This is because of write permissions. Use this command to reset the file colors:
+		find . -type d -print0 | xargs -0 chmod 755
+	Or just leave it, it's not a big deal.
+	
+		rsync -av --ignore-existing --progress <source> <destination> 
+	will skip existing files.
