@@ -12,11 +12,18 @@ def printdir(list):
 		print(str(i) + '. ' + file)
 
 
-def final_dir(folder_dirs, current_dir):
+def final_dir(folder_dirs, select):
+	
+	if (folder_dirs[select].find('.mkv') == -1 and folder_dirs[select].find('.mp4') == -1):
+		return False
+	return True
+
+	'''
 	for fname in folder_dirs:
 		if os.path.isdir(os.path.join(current_dir, fname)):
 			return False
 	return True
+	'''
 
 
 def input_single_pin():
@@ -72,14 +79,14 @@ def dirHandle(current_dir, direct, R_Sel_Dir):
 
 
 		if (re.search('G', Var) != None):
-			if (final_dir(direct, current_dir)):
+			if (final_dir(direct, select)):
 				final = True
 			else:
 				current_dir += '/' + direct[select]
 				direct = os.listdir(current_dir)
 				direct.sort()
 
-			if ((R_Sel_Dir and final_dir(direct, current_dir)) or final):
+			if ((R_Sel_Dir and final_dir(direct, select)) or final):
 				final = True
 			else:
 				select = 0
@@ -104,7 +111,20 @@ def dirHandle(current_dir, direct, R_Sel_Dir):
 
 def player(sode):
 	time.sleep(0.5)
-	subprocess.Popen(['vlc', '--no-video-title-show', '--rc-host', '127.0.0.1:1080', sode])
+	temp = None
+	print('\nPick size of subtitles:' +
+		'\nBlue = Small, Yellow = Medium, Green = Large\n')
+	while (temp == None):
+		if (GPIO.input(16) == 0):
+			temp = '50'
+		if (GPIO.input(22) == 0):
+			temp = '75'
+		if (GPIO.input(31) == 0):
+			temp = '100'
+		time.sleep(0.1)
+	subprocess.Popen(['vlc', '--no-video-title-show', 
+		'--rc-host', '127.0.0.1:1080', '--sub-text-scale=' + temp,
+			'--freetype-shadow-opacity=255', sode])
 		#'--video-filter', '"adjust{brightness=0.8}"', sode])
 		# stdout=subprocess.PIPE, stdin=subprocess.PIPE) if using p.poll()
 
@@ -130,18 +150,16 @@ def player(sode):
 
 	sock.send('get_length\n'.encode())
 	# need to give time for vlc to return time
-	time.sleep(0.05)
+	time.sleep(0.1)
 
 	# Starts out with hogwash VLC greeting
 	temp = sock.recv(1024).decode()
-	print(temp)
 	temp = temp.split()
 	temp = temp[len(temp)-3:]
 	temp = ' '.join(temp)
 	print(temp)
 
 	length = int(re.search('\d+', temp).group())
-	print(length)
 
 
 	# while video player is running
@@ -155,7 +173,7 @@ def player(sode):
 				if (index == 3):
 					index = 0
 					# mp3 must be in current directory
-					os.system('mpg321 -g 60 bumper.mp3')
+					os.system('mpg321 -g 25 bumper.mp3')
 				else:
 					index += 1
 
@@ -176,19 +194,16 @@ def player(sode):
 
 		# Blue Pressed
 		elif (GPIO.input(16) == 0):
-			if (paused):
-				sock.send(('key vol-down\n').encode())
-				time.sleep(0.1)
-
-				while (GPIO.input(16) == 0):
-					sock.send(('key vol-down\n').encode())
-					time.sleep(0.1)
-			else:
+			if (not paused):
 				timer = timer - dist[index]
 				sock.send(('seek ' + str(timer) + '\n').encode())
 				time.sleep(2)
 			
 			while (GPIO.input(16) == 0):
+				if (paused):
+					sock.send(('key vol-down\n').encode())
+					time.sleep(0.1)
+					
 				if (GPIO.input(29) == 0):
 					sock.send('shutdown\n'.encode())
 
@@ -212,22 +227,17 @@ def player(sode):
 
 		# Yellow Pressed
 		elif (GPIO.input(22) == 0):
-			if (paused):
-				sock.send(('key vol-up\n').encode())
-				time.sleep(0.1)
 
-				while (GPIO.input(22) == 0):
-					sock.send(('key vol-up\n').encode())
-					time.sleep(0.1)
-			else:
-				if (timer + dist[index] < length):
-					timer = timer + dist[index]
-					sock.send(('seek ' + str(timer) + '\n').encode())
-					time.sleep(2)
-				
-
+			if (timer + dist[index] < length and not paused):
+				timer = timer + dist[index]
+				sock.send(('seek ' + str(timer) + '\n').encode())
+				time.sleep(2)
 
 			while (GPIO.input(22) == 0):
+				if (paused):
+					sock.send(('key vol-up\n').encode())
+					time.sleep(0.1)
+				
 				if (GPIO.input(16) == 0):
 					sock.send('shutdown\n'.encode())
 
@@ -323,10 +333,10 @@ def player(sode):
 
 
 
-
 def createDir(dir):
 	if (not os.path.exists(dir)):
 		os.mkdir(dir)
+
 
 
 
@@ -356,6 +366,7 @@ def session_name(sode):
 
 
 
+
 def main(vidpath):
 	'''
 	BOARD 16 = Blue
@@ -371,9 +382,6 @@ def main(vidpath):
 	GPIO.setup(29, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.setup(31, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	# GPIO.input(BOARD NUM) to check pin value. 0 = on, 1 = off
-	# remember to use time.sleep()
-
-	# TODO implement Favorites
 
 	type = 'N'
 	print('\n\n\nPress Blue: play one or multiple\n' +
@@ -403,7 +411,6 @@ def main(vidpath):
 		direct = os.listdir(current_dir)
 		direct.sort()
 		printdir(direct)
-
 
 		Files = dirHandle(current_dir, direct, True)
 
@@ -436,10 +443,10 @@ def main(vidpath):
 
 
 	while (type == 'G' or type == 'Y'):
-		if (type == 'G'):
-			current_dir = 'Sessions/'
-		else:
+		if (type == 'Y'):
 			current_dir = 'Favorites/'
+		else:
+			current_dir = 'Sessions/'
 		createDir(current_dir)
 		Sessions = os.listdir(current_dir)
 
@@ -450,10 +457,13 @@ def main(vidpath):
 				print('No sessions currently stored')
 			return True
 
-		# Sorts in order of creation
-		Sessions = [os.path.join(current_dir, s) for s in Sessions]
-		Sessions.sort(key=lambda x: os.path.getmtime(x), reverse=True)
-		Sessions = [s.replace(current_dir, '') for s in Sessions]
+		if (type == 'Y'):
+			Sessions.sort()
+		else:
+			# Sorts in order of creation
+			Sessions = [os.path.join(current_dir, s) for s in Sessions]
+			Sessions.sort(key=lambda x: os.path.getmtime(x), reverse=True)
+			Sessions = [s.replace(current_dir, '') for s in Sessions]
 
 		printdir(Sessions)
 
@@ -509,8 +519,8 @@ def main(vidpath):
 		time.sleep(1)
 
 		if (type == 'R'):
-			Files[0].remove(sode)
-			Files[1] = random.randint(0, len(Files[0]) - 1)
+			while (Files[1] == prev_index):
+				Files[1] = random.randint(0, len(Files[0]) - 1)
 		elif (end_close == 'Previous'):
 			Files[1] -= 1
 		else:
@@ -524,13 +534,8 @@ def main(vidpath):
 
 	#'''
 
-	'''
-	will put in code that checks if the video was quit out of or 
-	if the player reached the end
 
-	also add code to skip further, ie. press and hold pause (Yellow)
-	and press left (Blue) or right (Green)
-	'''
+
 	time.sleep(1)
 	print('\nYellow: save episode to favorites\n' +
 			'Green: save session\n' +
@@ -544,8 +549,8 @@ def main(vidpath):
 
 	if (type == 'R'):
 		createDir('Sessions/')
-		
-		last3 = session_name(sode)
+
+		last3 = session_name(Files[2])
 
 		file = open('Sessions/Random_' + last3, 'w', encoding='utf8')
 		print('Saved Sessions/Random_' + last3)
@@ -562,11 +567,7 @@ def main(vidpath):
 		createDir(current_dir)
 
 		Sessions = os.listdir(current_dir)
-
-		# Sorts in order of creation
-		Sessions = [os.path.join(current_dir, s) for s in Sessions]
-		Sessions.sort(key=lambda x: os.path.getmtime(x), reverse=True)
-		Sessions = [s.replace(current_dir, '') for s in Sessions]
+		Sessions.sort()
 
 		Sessions.insert(0, 'Add new Favorites file')
 
@@ -583,18 +584,26 @@ def main(vidpath):
 			Files = readfile(temp, Files)
 
 			file = open(temp, 'w', encoding='utf8')
+
+			# make sure not adding duplicates
+			No_file = True
+			for line in Files[0]:
+				if (re.search(sode, line) != None):
+					No_file = False
+			if (No_file):
+				Files[0].append(sode)
 			
 		else:
-			file = open('Favorites/Favorite_' + str(len(Sessions)), 'w', encoding='utf8')
-			print('Saved to Favorites/Favorite_' + str(len(Sessions)))
+			prev_index = 0
+			temp = len(Sessions)
+			if (temp < 10):
+				file = open('Favorites/Favorite_0' + str(temp), 'w', encoding='utf8')
+				print('Saved to Favorites/Favorite_0' + str(temp))
+			else:
+				file = open('Favorites/Favorite_' + str(temp), 'w', encoding='utf8')
+				print('Saved to Favorites/Favorite_' + str(temp))
 
-		# make sure not adding duplicates
-		No_file = True
-		for line in Files[0]:
-			if (re.search(sode, line) != None):
-				No_file = False
-		if (No_file):
-			Files[0].append(sode)
+			Files[0] = [sode]
 	
 
 

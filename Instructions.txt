@@ -31,9 +31,7 @@ Or easier/error prone method:
 	3. Press Ctrl+Alt+F1 to open terminal.
 
 
-Next:	
--First thing's first, run "sudo apt update".
-
+******************************************************************
 -Run "sudo raspi-config".
 
 -In Localization Options, configure keyboard. Make sure it matches
@@ -44,24 +42,36 @@ Next:
 	
 -In Interface Options, enable SSH.
 
+-Run "sudo apt update".
+
+-Run "sudo apt-get install mpg321" for mp3 file.
+
 -Reboot using "sudo reboot".
 	
 
-Next:
+****************************************************************
 -Open windows terminal and navigate to directory before RaspVideo folder
 	using cd (change directory) and dir (list directory).
 	
--Transfer VLCP.py and config.txt to Pi using "scp VLCP.py config.txt pi@caelohm.local:~/Documents/"
+-Transfer VLCP.py and bumper.mp3 to Pi using "scp VLCP.py bumper.mp3 pi@caelohm.local:~/Documents/"
 	(hostname for other people).
 	
--Move config.txt on Pi using "sudo mv ~/Documents/RaspVideo/config.txt /boot/"
+-Turn off Raspberry Pi. Plug micro-sd into computer and 
+	replace config.txt file in root directory.
 	
 
-Next:
+****************************************************************
 -Transfer windows video files to Videos using "scp -r <space separated folder names to transfer> pi@caelohm.local:~/Videos/"
 	in directory of Videos you want to transfer. WARNING: Pi Zero W does not support H.265 codec, must convert to H.264.
 	
-Next:
+****************************************************************
+-Open ~/.bashrc with nano. Navigate to the bottom of the file and add:
+	cd <directory where VLCP.py and bumper.mp3 are located>
+	python3 VLCP.py
+	
+	This will start the program at boot.
+	
+****************************************************************
 -That is basically it! You may have to install some package that is used in VLCP.py. If you do, run sudo pip3 install <package>.
 
 
