@@ -1,29 +1,56 @@
-import os, re, time, subprocess, random, socket
+import os, re, time, subprocess, random, socket, math
 import RPi.GPIO as GPIO
 
 
-def printdir(list):
-	i = 0
+def print_normal(list):
+	i = 1
+	length = len(list)
 	# newline
 	print()
 
-	for file in list:
+	while(i <= length):
+		if (i < 10):
+			pad = ' '
+		else:
+			pad = ''
+
+		# no tabs & newline
+		print(pad + str(i) + '. ' + list[i-1])
 		i += 1
-		print(str(i) + '. ' + file)
 
 
-def final_dir(folder_dirs, select):
-	
-	if (folder_dirs[select].find('.mkv') == -1 and folder_dirs[select].find('.mp4') == -1):
-		return False
-	return True
 
-	'''
-	for fname in folder_dirs:
-		if os.path.isdir(os.path.join(current_dir, fname)):
-			return False
-	return True
-	'''
+
+def printdir(list):
+	i = 1
+	length = len(list)
+	# newline
+	print()
+
+	while(i <= length):
+		if (i < 10):
+			pad = ' '
+		else:
+			pad = ''
+		
+		if ((i-1) % 2 == 0):
+			tabs = ''
+			n_tabs = math.floor((len(list[i-1]) + 4) / 8)
+			while (n_tabs < 6):
+				tabs += '\t'
+				n_tabs += 1
+			
+			# print no newline
+			print(pad + str(i) + '. ' + list[i-1] + tabs, end = '')
+
+		else:
+			# no tabs & newline
+			print(pad + str(i) + '. ' + list[i-1])
+		i += 1
+
+	if (length % 2 == 1):
+		print()
+
 
 
 def input_single_pin():
@@ -45,62 +72,83 @@ def input_single_pin():
 
 
 def dirHandle(current_dir, direct, R_Sel_Dir):
-	Var = 'N'
 	final = False
 
 	select = 0
 	
 	print('\nStarting at: \n1. ' + direct[0] + '\n')
-	Var = input_single_pin()
 
 	while (not final):
 
-		if (re.search('B', Var) != None):
-			if (select == 0):
+		while (GPIO.input(16) == 0): # Blue
+			if (GPIO.input(29) == 0): # Red
+				if (select - 5 < 0):
+					select = len(direct) - 1
+				else:
+					select -= 5
+					time.sleep(0.2)
+			elif (GPIO.input(22) == 0):
+				printdir(direct)
+			elif (select == 0):
 				select = len(direct) - 1
 			else:
 				select -= 1
 			print('\n' + str(select + 1) + '. ' + direct[select])
-
-		# reset
-		if (re.search('R', Var) != None):
-			if (R_Sel_Dir):
-				final = True
-			else:
-				return 'Reset'
+			time.sleep(0.3)
 
 
-		if (re.search('Y', Var) != None):
-			if (select == len(direct) - 1):
+		while (GPIO.input(22) == 0): # Yellow
+			if (GPIO.input(31) == 0): # Green
+				if (select + 5 > len(direct) - 1):
+					select = 0
+				else:
+					select += 5
+					time.sleep(0.2)
+			elif (GPIO.input(16) == 0):
+				printdir(direct)
+			elif (select == len(direct) - 1):
 				select = 0
 			else:
 				select += 1
 			print('\n' + str(select + 1) + '. ' + direct[select])
+			time.sleep(0.3)
 
+		# reset
+		if (GPIO.input(29) == 0):
+			if (R_Sel_Dir):
+				final = True
+			else:
+				return 'Reset'
+			time.sleep(0.2)
 
-		if (re.search('G', Var) != None):
-			if (final_dir(direct, select)):
+		# Green
+		elif (GPIO.input(31) == 0):
+			if (not os.path.isdir(current_dir + '/' + direct[select])):
 				final = True
 			else:
 				current_dir += '/' + direct[select]
 				direct = os.listdir(current_dir)
 				direct.sort()
 
-			if ((R_Sel_Dir and final_dir(direct, select)) or final):
-				final = True
-			else:
+			if (not final):
 				select = 0
 
 				printdir(direct)
 
 				print('\nStarting at: \n1. ' + direct[0])
+			time.sleep(0.2)
 
-		if (final == False):
-			Var = input_single_pin()
-		time.sleep(0.1)
+		time.sleep(0.025)
+	
 	episodes = []
-	for (dirpath, dirnames, filenames) in os.walk(current_dir):
-		episodes += [os.path.join(dirpath, file) for file in filenames]
+
+	if (R_Sel_Dir):
+		for (dirpath, dirnames, filenames) in os.walk(current_dir):
+			episodes += [os.path.join(dirpath, file) for file in filenames]
+	else:
+		for elem in direct:
+			episodes.append(current_dir + '/' + elem)
+
 	episodes.sort()
 	return [episodes, select, current_dir]
 
@@ -111,6 +159,7 @@ def dirHandle(current_dir, direct, R_Sel_Dir):
 
 def player(sode):
 	time.sleep(0.5)
+	'''
 	temp = None
 	print('\nPick size of subtitles:' +
 		'\nBlue = Small, Yellow = Medium, Green = Large\n')
@@ -122,9 +171,12 @@ def player(sode):
 		if (GPIO.input(31) == 0):
 			temp = '100'
 		time.sleep(0.1)
+
+		add '--sub-text-scale=' + temp, to Popen to launch
+			with subtitle scaling
+	'''
 	subprocess.Popen(['vlc', '--no-video-title-show', 
-		'--rc-host', '127.0.0.1:1080', '--sub-text-scale=' + temp,
-			'--freetype-shadow-opacity=255', sode])
+		'--rc-host', '127.0.0.1:1080', '--freetype-shadow-opacity=255', sode])
 		#'--video-filter', '"adjust{brightness=0.8}"', sode])
 		# stdout=subprocess.PIPE, stdin=subprocess.PIPE) if using p.poll()
 
@@ -133,7 +185,6 @@ def player(sode):
 	while (sock.connect_ex(('127.0.0.1', 1080)) != 0):
 		time.sleep(1)
 
-	#'''
 
 	# type of jump
 	dist = [15, 60, 300, 1200]
@@ -150,7 +201,7 @@ def player(sode):
 
 	sock.send('get_length\n'.encode())
 	# need to give time for vlc to return time
-	time.sleep(0.1)
+	time.sleep(1)
 
 	# Starts out with hogwash VLC greeting
 	temp = sock.recv(1024).decode()
@@ -202,7 +253,7 @@ def player(sode):
 			while (GPIO.input(16) == 0):
 				if (paused):
 					sock.send(('key vol-down\n').encode())
-					time.sleep(0.1)
+					time.sleep(0.2)
 					
 				if (GPIO.input(29) == 0):
 					sock.send('shutdown\n'.encode())
@@ -219,8 +270,6 @@ def player(sode):
 					sock.close()
 
 					return 'Stop'
-
-				time.sleep(0.1)
 
 
 
@@ -465,7 +514,7 @@ def main(vidpath):
 			Sessions.sort(key=lambda x: os.path.getmtime(x), reverse=True)
 			Sessions = [s.replace(current_dir, '') for s in Sessions]
 
-		printdir(Sessions)
+		print_normal(Sessions)
 
 		Files = dirHandle(current_dir, Sessions, False)
 
@@ -571,7 +620,7 @@ def main(vidpath):
 
 		Sessions.insert(0, 'Add new Favorites file')
 
-		printdir(Sessions)
+		print_normal(Sessions)
 
 		Files = dirHandle(current_dir, Sessions, False)
 
