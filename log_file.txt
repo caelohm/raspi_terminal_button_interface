@@ -1,0 +1,785 @@
+VLC media player 3.0.16 Vetinari (revision 1.0.6-1682-g88158c836)
+[1m00a46b98] main libvlc debug: VLC media player - 3.0.16 Vetinari
+[1m00a46b98] main libvlc debug: Copyright © 1996-2021 the VideoLAN team
+[1m00a46b98] main libvlc debug: revision 1.0.6-1682-g88158c836
+[1m00a46b98] main libvlc debug: configured with ./configure  '--build=arm-linux-gnueabihf' '--prefix=/usr' '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var' '--disable-option-checking' '--disable-silent-rules' '--libdir=${prefix}/lib/arm-linux-gnueabihf' '--runstatedir=/run' '--disable-maintainer-mode' '--disable-dependency-tracking' '--disable-debug' '--config-cache' '--disable-update-check' '--enable-fast-install' '--docdir=/usr/share/doc/vlc' '--with-binary-version=3.0.16-1+rpi1+rpt2' '--enable-a52' '--enable-aa' '--enable-aribsub' '--enable-avahi' '--enable-bluray' '--enable-caca' '--enable-chromaprint' '--enable-chromecast' '--enable-dav1d' '--enable-dbus' '--enable-dca' '--enable-dvbpsi' '--enable-dvdnav' '--enable-faad' '--enable-flac' '--enable-fluidsynth' '--enable-freetype' '--enable-fribidi' '--enable-gles2' '--enable-gnutls' '--enable-harfbuzz' '--enable-jack' '--enable-kate' '--enable-libass' '--enable-libmpeg2' '--enable-libxml2' '--enable-lirc' '--enable-live555' '--enable-mad' '--enable-matroska' '--enable-mod' '--enable-mpc' '--enable-mpg123' '--enable-mtp' '--enable-ncurses' '--enable-notify' '--enable-ogg' '--enable-opus' '--enable-pulse' '--enable-qt' '--enable-realrtsp' '--enable-samplerate' '--enable-sdl-image' '--enable-sftp' '--enable-shine' '--enable-shout' '--enable-skins2' '--enable-sndio' '--enable-soxr' '--enable-spatialaudio' '--enable-speex' '--enable-svg' '--enable-svgdec' '--enable-taglib' '--enable-theora' '--enable-twolame' '--enable-upnp' '--enable-vnc' '--enable-vorbis' '--enable-x264' '--enable-x265' '--enable-zvbi' '--with-kde-solid=/usr/share/solid/actions/' '--disable-aom' '--disable-crystalhd' '--disable-d3d11va' '--disable-decklink' '--disable-directx' '--disable-dsm' '--disable-dxva2' '--disable-fdkaac' '--disable-fluidlite' '--disable-freerdp' '--disable-goom' '--disable-gst-decode' '--disable-libtar' '--disable-macosx' '--disable-macosx-avfoundation' '--disable-macosx-qtkit' '--disable-microdns' '--disable-mfx' '--disable-opencv' '--disable-projectm' '--disable-schroedinger' '--disable-sparkle' '--disable-srt' '--disable-telx' '--disable-vpx' '--disable-vsxu' '--disable-wasapi' '--enable-alsa' '--enable-dc1394' '--enable-dv1394' '--enable-libplacebo' '--enable-linsys' '--enable-nfs' '--enable-udev' '--enable-v4l2' '--enable-wayland' '--enable-vcd' '--enable-smbclient' '--disable-oss' '--disable-mmx' '--disable-sse' '--enable-neon' '--enable-mmal' '--enable-mmal-avcodec' '--disable-vdpau' '--disable-libva' '--disable-altivec' '--enable-omxil' '--enable-omxil-vout' '--enable-rpi-omxil' 'build_alias=arm-linux-gnueabihf' 'CFLAGS=-g -O2 -ffile-prefix-map=/home/pi/vlc=. -fstack-protector-strong -Wformat -Werror=format-security ' 'LDFLAGS=-Wl,-z,relro -Wl,-z,now' 'CPPFLAGS=-Wdate-time -D_FORTIFY_SOURCE=2' 'CXXFLAGS=-g -O2 -ffile-prefix-map=/home/pi/vlc=. -fstack-protector-strong -Wformat -Werror=format-security ' 'OBJCFLAGS=-g -O2 -ffile-prefix-map=/home/pi/vlc=. -fstack-protector-strong -Wformat -Werror=format-security'
+[1m00a46b98] main libvlc debug: searching plug-in modules
+[1m00a46b98] main libvlc debug: loading plugins cache file /usr/lib/arm-linux-gnueabihf/vlc/plugins/plugins.dat
+[1m00a46b98] main libvlc debug: recursively browsing `/usr/lib/arm-linux-gnueabihf/vlc/plugins'
+[1m00a46b98] main libvlc debug: plug-ins loaded: 513 modules
+[1m00a46b98] main libvlc debug: opening config file (/home/pi/.config/vlc/vlcrc)
+[1m00a46db8] main logger debug: looking for logger module matching "any": 4 candidates
+[1m00a46db8] main logger debug: using logger module "console"
+[1m00a46b98] main libvlc debug: translation test: code is "C"
+[1m00a48f90] main keystore debug: looking for keystore module matching "memory": 4 candidates
+[1m00a48f90] main keystore debug: using keystore module "memory"
+[1m00a46b98] main libvlc debug: CPU has capabilities FPU 
+[1m00aa70d8] main input debug: Creating an input for 'Media Library'
+[1m00aa70d8] main input debug: Input is a meta file: disabling unneeded options
+[1m00aa70d8] main input debug: using timeshift granularity of 50 MiB
+[1m00aa70d8] main input debug: using default timeshift path
+[1m00aa70d8] main input debug: `file/directory:///home/pi/.local/share/vlc/ml.xspf' gives access `file' demux `directory' path `/home/pi/.local/share/vlc/ml.xspf'
+[1m00aaa9a8] main input source debug: creating demux: access='file' demux='directory' location='/home/pi/.local/share/vlc/ml.xspf' file='/home/pi/.local/share/vlc/ml.xspf'
+[1m00aaaa90] main demux debug: looking for access_demux module matching "file": 19 candidates
+[1m00aaaa90] main demux debug: no access_demux modules matched
+[1m00abc968] main stream debug: creating access: file:///home/pi/.local/share/vlc/ml.xspf
+[1m00abc968] main stream debug:  (path: /home/pi/.local/share/vlc/ml.xspf)
+[1m00abc968] main stream debug: looking for access module matching "file": 29 candidates
+[1m00abc968] main stream debug: using access module "filesystem"
+[1m00abd258] main stream debug: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+[1m00abd258] cache_read stream debug: Using stream method for AStream*
+[1m00abd258] cache_read stream debug: starting pre-buffering
+[1m00abd258] cache_read stream debug: received first data after 0 ms
+[1m00abd258] cache_read stream debug: pre-buffering done 296 bytes in 0s - 362 KiB/s
+[1m00abd258] main stream debug: using stream_filter module "cache_read"
+[1m00abdb30] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[1m00abdb30] playlist stream debug: using XSPF playlist reader
+[1m00abdb30] main stream debug: using stream_filter module "playlist"
+[1m00abdb30] main stream debug: stream filter added to 0xabd258
+[1m00abfb08] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[1m00abfb08] main stream debug: no stream_filter modules matched
+[1m00abe128] main stream_directory debug: looking for stream_directory module matching "any": 1 candidates
+[1m00abe128] main stream_directory debug: no stream_directory modules matched
+[1m00aaa9a8] main input source debug: attachment of directory-extractor failed for file:///home/pi/.local/share/vlc/ml.xspf
+[1m00abfb08] main stream debug: looking for stream_filter module matching "record": 26 candidates
+[1m00abfb08] main stream debug: using stream_filter module "record"
+[1m00aaa9a8] main input source debug: creating demux: access='file' demux='directory' location='/home/pi/.local/share/vlc/ml.xspf' file='/home/pi/.local/share/vlc/ml.xspf'
+[1m00aaaa90] main demux debug: looking for demux module matching "directory": 55 candidates
+[1m00aaaa90] main demux debug: using demux module "directory"
+[1m00ac1d48] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[1m00ac1d48] lua demux meta debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/meta/reader
+[1m00ac1d48] lua demux meta debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/reader
+[1m00ac1d48] lua demux meta debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/reader/filename.luac
+[1m00ac1d48] lua demux meta debug: Trying Lua scripts in /usr/share/vlc/lua/meta/reader
+[1m00ac1d48] main demux meta debug: no meta reader modules matched
+[1m00aa70d8] main input debug: `file/directory:///home/pi/.local/share/vlc/ml.xspf' successfully opened
+[1m00ab01a8] main xml reader debug: looking for xml reader module matching "any": 1 candidates
+[1m00ab01a8] main xml reader debug: using xml reader module "xml"
+[1m00aa70d8] main input debug: EOF reached
+[1m00aaaa90] main demux debug: removing module "directory"
+[1m00abfb08] main stream debug: removing module "record"
+[1m00abdb30] main stream debug: removing module "playlist"
+[1m00abd258] main stream debug: removing module "cache_read"
+[1m00abc968] main stream debug: removing module "filesystem"
+[1m00aa58a8] main playlist debug: creating audio output
+[1m00ac4048] main audio output debug: looking for audio output module matching "any": 6 candidates
+[1m00ac4048] vlcpulse audio output debug: using library version 14.2.0
+[1m00ac4048] vlcpulse audio output debug:  (compiled with version 14.2.0, protocol 34)
+[1m00ac4048] vlcpulse audio output debug: connected locally to /run/user/1000/pulse/native as client #44
+[1m00ac4048] vlcpulse audio output debug: using protocol 34, server protocol 34
+[1m00ac4048] pulse audio output debug: adding sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output debug: using audio output module "pulse"
+[1m00aa58a8] main playlist debug: keeping audio output
+[1m00ac1d48] main interface debug: looking for interface module matching "dbus,none": 19 candidates
+[1m00ac1d48] dbus interface debug: listening on dbus as: org.mpris.MediaPlayer2.vlc
+[1m00ac1d48] main interface debug: using interface module "dbus"
+[1m00ad1160] main interface debug: looking for interface module matching "hotkeys,none": 19 candidates
+[1m00ad1160] main interface debug: using interface module "hotkeys"
+[1m00ad22c0] main interface debug: looking for interface module matching "globalhotkeys,none": 19 candidates
+[1m00ad1a58] main input debug: Creating an input for preparsing 'Food Wars! - 01.mp4'
+[1m00ad22c0] main interface debug: no interface modules matched
+[1m00ad22c0] main interface error: no suitable interface module
+[1m00a46b98] main libvlc error: interface "globalhotkeys,none" initialization failed
+[1m00a46b98] main libvlc: 1mRunning vlc with the default interface. Use 'cvlc' to use vlc without interface.
+[1m00ad22c0] main interface debug: looking for interface module matching "any": 19 candidates
+[1m00ad22c0] skins2 interface debug: Cannot open X display
+[1m00ad22c0] skins2 interface error: cannot initialize OSFactory
+[1m00ad22c0] [cli] lua interface debug: Found lua interface script: /usr/lib/arm-linux-gnueabihf/vlc/lua/intf/cli.luac
+[1m00ad22c0] [cli] lua interface debug: Setting config variable: config={cli={host='127.0.0.1:1080'}}
+[1m00ad22c0] [cli] main interface debug: using interface module "lua"
+[1m00aa58a8] main playlist debug: processing request item: null, node: Playlist, skip: 0
+[1m00aa58a8] main playlist debug: rebuilding array of current - root Playlist
+[1m00aa58a8] main playlist debug: rebuild done - 1 items, index -1
+[1m00aa58a8] main playlist debug: starting playback of new item
+[1m00aa58a8] main playlist debug: resyncing on Food Wars! - 01.mp4
+[1m00aa58a8] main playlist debug: Food Wars! - 01.mp4 is at 0
+[1m00aa58a8] main playlist debug: creating new input thread
+[1m00ad18d0] main input debug: Creating an input for '[MK] Food Wars! - 01 [BD 1080p][Hi10][Dual-Audio]'
+[1m00aa58a8] main playlist debug: requesting art for new input thread
+[1m00ad22c0] [cli] lua interface: 1mListening on host "127.0.0.1:1080".
+[1m00ad18d0] main input debug: using timeshift granularity of 50 MiB
+[1m00ad18d0] main input debug: using default timeshift path
+[1m00ad18d0] main input debug: `file:///home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4' gives access `file' demux `any' path `/home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4'
+[1m00aeeb48] main input source debug: creating demux: access='file' demux='any' location='/home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4' file='/home/pi/Videos/Anime/Food Wars/Food Wars! - 01.mp4'
+[1mb3613a58] main meta fetcher debug: looking for meta fetcher module matching "any": 1 candidates
+[1mb3613a58] lua meta fetcher debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/meta/fetcher
+[1mb3613a58] lua meta fetcher debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/fetcher
+[1mb3613a58] lua meta fetcher debug: Trying Lua scripts in /usr/share/vlc/lua/meta/fetcher
+[1mb3613a58] main meta fetcher debug: no meta fetcher modules matched
+[1mb3613a58] main art finder debug: looking for art finder module matching "any": 2 candidates
+[1mb3613a58] lua art finder debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/meta/art
+[1m00aeec80] main demux debug: looking for access_demux module matching "file": 19 candidates
+[1m00aeec80] main demux debug: no access_demux modules matched
+[1m00aef018] main stream debug: creating access: file:///home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4
+[1m00aef018] main stream debug:  (path: /home/pi/Videos/Anime/Food Wars/Food Wars! - 01.mp4)
+[1m00aef018] main stream debug: looking for access module matching "file": 29 candidates
+[1m00aef018] main stream debug: using access module "filesystem"
+[1m00aef1f8] main stream debug: looking for stream_filter module matching "prefetch,cache_read": 26 candidates
+[1m00aef1f8] cache_read stream debug: Using stream method for AStream*
+[1m00aef1f8] cache_read stream debug: starting pre-buffering
+[1m00aef1f8] cache_read stream debug: received first data after 0 ms
+[1m00aef1f8] cache_read stream debug: pre-buffering done 1024 bytes in 0s - 830 KiB/s
+[1m00ad22c0] [cli] main interface debug: net: listening to 127.0.0.1 port 1080
+[1mb3613a58] lua art finder debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art
+[1mb3613a58] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/00_musicbrainz.luac
+[1mb3613a58] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/00_musicbrainz.luac
+[1m00aef1f8] main stream debug: using stream_filter module "cache_read"
+[1m00aef498] main stream debug: looking for stream_filter module matching "any": 26 candidates
+[1m00aef498] lua stream debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/playlist
+[1m00aef498] lua stream debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/anevia_streams.luac
+[1mb3613a58] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/01_googleimage.luac
+[1mb3613a58] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/01_googleimage.luac
+[1mb3613a58] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/02_frenchtv.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/anevia_xml.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/appletrailers.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/bbc_co_uk.luac
+[1mb3613a58] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/02_frenchtv.luac
+[1mb3613a58] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/03_lastfm.luac
+[1mb3613a58] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/03_lastfm.luac
+[1mb3613a58] lua art finder debug: Trying Lua scripts in /usr/share/vlc/lua/meta/art
+[1mb3613a58] main art finder debug: no art finder modules matched
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/cue.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/dailymotion.luac
+[1mb39065e8] main meta fetcher debug: looking for meta fetcher module matching "any": 1 candidates
+[1mb39065e8] lua meta fetcher debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/meta/fetcher
+[1mb39065e8] lua meta fetcher debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/fetcher
+[1mb39065e8] lua meta fetcher debug: Trying Lua scripts in /usr/share/vlc/lua/meta/fetcher
+[1mb39065e8] main meta fetcher debug: no meta fetcher modules matched
+[1mb39065e8] main art finder debug: looking for art finder module matching "any": 2 candidates
+[1mb39065e8] lua art finder debug: Trying Lua scripts in /home/pi/.local/share/vlc/lua/meta/art
+[1mb39065e8] lua art finder debug: Trying Lua scripts in /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art
+[1mb39065e8] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/00_musicbrainz.luac
+[1mb39065e8] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/00_musicbrainz.luac
+[1mb39065e8] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/01_googleimage.luac
+[1mb39065e8] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/01_googleimage.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/jamendo.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/koreus.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/liveleak.luac
+[1mb39065e8] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/02_frenchtv.luac
+[1mb39065e8] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/02_frenchtv.luac
+[1mb39065e8] lua art finder debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/03_lastfm.luac
+[1mb39065e8] lua art finder debug: skipping script (unmatched scope) /usr/lib/arm-linux-gnueabihf/vlc/lua/meta/art/03_lastfm.luac
+[1mb39065e8] lua art finder debug: Trying Lua scripts in /usr/share/vlc/lua/meta/art
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/newgrounds.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/rockbox_fm_presets.luac
+[1mb39065e8] main art finder debug: no art finder modules matched
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/soundcloud.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/twitch.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/vimeo.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/vocaroo.luac
+[1m00aef498] lua stream debug: Trying Lua playlist script /usr/lib/arm-linux-gnueabihf/vlc/lua/playlist/youtube.luac
+[1m00aef498] lua stream debug: Trying Lua scripts in /usr/share/vlc/lua/playlist
+[1m00aef498] main stream debug: no stream_filter modules matched
+[1m00af2f88] main stream_directory debug: looking for stream_directory module matching "any": 1 candidates
+[1m00af2f88] main stream_directory debug: no stream_directory modules matched
+[1m00aeeb48] main input source debug: attachment of directory-extractor failed for file:///home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4
+[1m00aef498] main stream debug: looking for stream_filter module matching "record": 26 candidates
+[1m00aef498] main stream debug: using stream_filter module "record"
+[1m00aeeb48] main input source debug: creating demux: access='file' demux='any' location='/home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4' file='/home/pi/Videos/Anime/Food Wars/Food Wars! - 01.mp4'
+[1m00af9c28] main demux debug: looking for demux module matching "mp4": 55 candidates
+[1m00aef498] mp4 stream warning: unknown box type titl (incompletely loaded)
+[1m00aef498] mp4 stream warning: unknown box type gmin (incompletely loaded)
+[1m00aef498] mp4 stream warning: unknown box type text (incompletely loaded)
+[1m00aef498] mp4 stream debug: dumping root Box "root"
+[1m00aef498] mp4 stream debug: |   + ftyp size 32 offset 0
+[1m00aef498] mp4 stream debug: |   + free size 8 offset 32
+[1m00aef498] mp4 stream debug: |   + mdat size 270456124 offset 40
+[1m00aef498] mp4 stream debug: |   + moov size 1211169 offset 270456164
+[1m00aef498] mp4 stream debug: |   |   + mvhd size 108 offset 270456172
+[1m00aef498] mp4 stream debug: |   |   + trak size 746626 offset 270456280
+[1m00aef498] mp4 stream debug: |   |   |   + tkhd size 92 offset 270456288
+[1m00aef498] mp4 stream debug: |   |   |   + edts size 48 offset 270456380
+[1m00aef498] mp4 stream debug: |   |   |   |   + elst size 40 offset 270456388
+[1m00aef498] mp4 stream debug: |   |   |   + tref size 20 offset 270456428
+[1m00aef498] mp4 stream debug: |   |   |   |   + chap size 12 offset 270456436
+[1m00aef498] mp4 stream debug: |   |   |   + mdia size 746458 offset 270456448
+[1m00aef498] mp4 stream debug: |   |   |   |   + mdhd size 32 offset 270456456
+[1m00aef498] mp4 stream debug: |   |   |   |   + hdlr size 45 offset 270456488
+[1m00aef498] mp4 stream debug: |   |   |   |   + minf size 746373 offset 270456533
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + vmhd size 20 offset 270456541
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + dinf size 36 offset 270456561
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + dref size 28 offset 270456569
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + url  size 12 offset 270456585
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + stbl size 746309 offset 270456597
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsd size 208 offset 270456605
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + avc1 size 192 offset 270456621
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + avcC size 51 offset 270456707
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + colr size 19 offset 270456758
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + pasp size 16 offset 270456777
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + btrt size 20 offset 270456793
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stts size 143608 offset 270456813
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stss size 1748 offset 270600421
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + sdtp size 35905 offset 270602169
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + ctts size 277624 offset 270638074
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsc size 28 offset 270915698
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsz size 143592 offset 270915726
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stco size 143588 offset 271059318
+[1m00aef498] mp4 stream debug: |   |   + trak size 463636 offset 271202906
+[1m00aef498] mp4 stream debug: |   |   |   + tkhd size 92 offset 271202914
+[1m00aef498] mp4 stream debug: |   |   |   + edts size 36 offset 271203006
+[1m00aef498] mp4 stream debug: |   |   |   |   + elst size 28 offset 271203014
+[1m00aef498] mp4 stream debug: |   |   |   + tref size 20 offset 271203042
+[1m00aef498] mp4 stream debug: |   |   |   |   + chap size 12 offset 271203050
+[1m00aef498] mp4 stream debug: |   |   |   + mdia size 463417 offset 271203062
+[1m00aef498] mp4 stream debug: |   |   |   |   + mdhd size 32 offset 271203070
+[1m00aef498] mp4 stream debug: |   |   |   |   + hdlr size 49 offset 271203102
+[1m00aef498] mp4 stream debug: |   |   |   |   + minf size 463328 offset 271203151
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + smhd size 16 offset 271203159
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + dinf size 36 offset 271203175
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + dref size 28 offset 271203183
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + url  size 12 offset 271203199
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + stbl size 463268 offset 271203211
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsd size 126 offset 271203219
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + mp4a size 110 offset 271203235
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + esds size 54 offset 271203271
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   |   + btrt size 20 offset 271203325
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stts size 24 offset 271203345
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsc size 38752 offset 271203369
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsz size 280716 offset 271242121
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stco size 143588 offset 271522837
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + sgpd size 26 offset 271666425
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + sbgp size 28 offset 271666451
+[1m00aef498] mp4 stream debug: |   |   |   + udta size 63 offset 271666479
+[1m00aef498] mp4 stream debug: |   |   |   |   + name size 24 offset 271666487
+[1m00aef498] mp4 stream debug: |   |   |   |   + titl size 31 offset 271666511 (????)
+[1m00aef498] mp4 stream debug: |   |   + trak size 607 offset 271666542
+[1m00aef498] mp4 stream debug: |   |   |   + tkhd size 92 offset 271666550
+[1m00aef498] mp4 stream debug: |   |   |   + edts size 36 offset 271666642
+[1m00aef498] mp4 stream debug: |   |   |   |   + elst size 28 offset 271666650
+[1m00aef498] mp4 stream debug: |   |   |   + mdia size 471 offset 271666678
+[1m00aef498] mp4 stream debug: |   |   |   |   + mdhd size 32 offset 271666686
+[1m00aef498] mp4 stream debug: |   |   |   |   + hdlr size 48 offset 271666718
+[1m00aef498] mp4 stream debug: |   |   |   |   + minf size 383 offset 271666766
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + gmhd size 76 offset 271666774
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + gmin size 24 offset 271666782 (????)
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + text size 44 offset 271666806 (????)
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + dinf size 36 offset 271666850
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + dref size 28 offset 271666858
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + url  size 12 offset 271666874
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + stbl size 263 offset 271666886
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsd size 75 offset 271666894
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   |   + text size 59 offset 271666910
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stts size 80 offset 271666969
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsc size 28 offset 271667049
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stsz size 52 offset 271667077
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + stco size 20 offset 271667129
+[1m00aef498] mp4 stream debug: |   |   + udta size 184 offset 271667149
+[1m00aef498] mp4 stream debug: |   |   |   + meta size 176 offset 271667157
+[1m00aef498] mp4 stream debug: |   |   |   |   + hdlr size 33 offset 271667169
+[1m00aef498] mp4 stream debug: |   |   |   |   + ilst size 131 offset 271667202
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + cnam size 73 offset 271667210
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + data size 65 offset 271667218
+[1m00aef498] mp4 stream debug: |   |   |   |   |   + ctoo size 50 offset 271667283
+[1m00aef498] mp4 stream debug: |   |   |   |   |   |   + data size 42 offset 271667291
+[1m00af9c28] mp4 demux debug: unrecognized major media specification (mp42).
+[1m00af9c28] mp4 demux debug: found 3 tracks
+[1m00af9c28] mp4 demux warning: elst box found
+[1m00af9c28] mp4 demux debug:    - [0] duration=42ms media time=-1ms) rate=1.0
+[1m00af9c28] mp4 demux debug:    - [1] duration=1497038ms media time=83ms) rate=1.0
+[1m00af9c28] mp4 demux debug: track[Id 0x1] read 35893 chunk
+[1m00af9c28] mp4 demux warning: STTS table of 17949 entries
+[1m00af9c28] mp4 demux warning: CTTS table of 34701 entries
+[1m00ad22c0] [cli] main interface debug: accepted socket 13 (from socket 12)
+[1m00af9c28] mp4 demux debug: track[Id 0x1] read 35893 samples length:1497s
+[1m00ad18d0] main input debug: selecting program id=0
+[1m00af9c28] mp4 demux debug: adding track[Id 0x1] video (enable) language undef
+[1m00af9c28] mp4 demux warning: elst box found
+[1m00af9c28] mp4 demux debug:    - [0] duration=1497024ms media time=21ms) rate=1.0
+[1m00af9c28] mp4 demux debug: track[Id 0x2] read 35893 chunk
+[1m00af9c28] mp4 demux warning: STTS table of 1 entries
+[1m00af9c28] mp4 demux debug: track[Id 0x2] read 70174 samples length:1497s
+[1m00af9c28] mp4 demux debug: adding track[Id 0x2] audio (enable) language jpn
+[1m00af9c28] mp4 demux warning: elst box found
+[1m00af9c28] mp4 demux debug:    - [0] duration=1497037ms media time=0ms) rate=1.0
+[1m00af9c28] mp4 demux debug: track[Id 0x3] read 1 chunk
+[1m00af9c28] mp4 demux warning: STTS table of 8 entries
+[1m00af9c28] mp4 demux debug: track[Id 0x3] read 8 samples length:1497s
+[1m00af9c28] mp4 demux debug: adding track[Id 0x3] subtitle (disable) language eng
+[1m00af9c28] main demux debug: using demux module "mp4"
+[1m00ad18d0] main input debug: attempt to destroy nonexistent variable "title  0"
+[1m00ad18d0] main input debug: looking for a subtitle file in /home/pi/Videos/Anime/Food Wars/
+[1m00f481f0] main decoder debug: looking for video decoder module matching "any": 18 candidates
+[1m00f481f0] mmal_codec decoder debug: OpenDecoder: <<< (h264/----)[H264] 1280x720 1/1=1/1 o:0 -> (----/----) 0x0 0/0 o:0
+[1m00f481f0] mmal_codec decoder: 1mVCSM init succeeded: Legacy
+[1m00f481f0] main decoder debug: using video decoder module "mmal_codec"
+[1m00f6bc20] main decoder debug: looking for audio decoder module matching "any": 21 candidates
+[1m00f6bc20] main decoder debug: using audio decoder module "faad"
+[1m00af04e0] main demux meta debug: looking for meta reader module matching "any": 2 candidates
+[1m00af04e0] main demux meta debug: using meta reader module "taglib"
+[1m00af9c28] main demux debug: removing module "taglib"
+[1m00ad18d0] main input debug: `file:///home/pi/Videos/Anime/Food%20Wars/Food%20Wars%21%20-%2001.mp4' successfully opened
+[1m00af9c28] mp4 demux debug: elst (0) gives 0ms (movie)-> 21ms (track)
+[1m00ad18d0] main input debug: Buffering 0%
+[1m00f6bc20] faad decoder warning: decoded zero sample
+[1m00af9c28] mp4 demux warning: elst old=0 new=1
+[1m00aa58a8] main playlist debug: reusing audio output
+[1m00ac4048] pulse audio output debug: using stereo channel map
+[1m00ac4048] pulse audio output debug: changed buffer metrics: maxlength=4194304, tlength=53744, prebuf=0, minreq=15360
+[1m00ac4048] pulse audio output debug: connected to sink alsa_output.platform-soc_sound.stereo-fallback
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output debug: output 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[1mb3906460] main volume debug: looking for audio volume module matching "any": 3 candidates
+[1mb3906460] main volume debug: using audio volume module "float_mixer"
+[1m00ad18d0] main input debug: Buffering 20%
+[1m00ac4048] main audio output debug: input 'f32l' 48000 Hz Stereo frame=1 samples/8 bytes
+[1mb390ee48] main audio filter debug: looking for audio filter module matching "scaletempo": 16 candidates
+[1m00ad18d0] main input debug: Buffering 45%
+[1mb390ee48] scaletempo audio filter debug: format: 48000 rate, 2 nch, 4 bps, fl32
+[1mb390ee48] scaletempo audio filter debug: params: 30 stride, 0.200 overlap, 14 search
+[1mb390ee48] scaletempo audio filter debug: 1.000 scale, 1440.000 stride_in, 1440 stride_out, 1152 standing, 288 overlap, 672 search, 2400 queue, fl32 mode
+[1mb390ee48] main audio filter debug: using audio filter module "scaletempo"
+[1m00ac4048] main audio output debug: conversion: 'f32l'->'f32l' 48000 Hz->48000 Hz Stereo->Stereo
+[1m00ac4048] main audio output debug: conversion pipeline complete
+[1m00ac4048] main audio output debug: conversion: 'f32l'->'f32l' 48000 Hz->48000 Hz Stereo->Stereo
+[1m00ac4048] main audio output debug: conversion pipeline complete
+[1mb3916b38] main audio resampler debug: looking for audio resampler module matching "any": 4 candidates
+[1m00ad18d0] main input debug: Buffering 70%
+[1m00ad18d0] main input debug: Buffering 95%
+[1mb3916b38] main audio resampler debug: using audio resampler module "samplerate"
+[1m00ad18d0] main input debug: Stream buffering done (1208 ms in 159 ms)
+[1m00f481f0] main decoder error: buffer deadlock prevented
+[1m00ad18d0] main input debug: Decoder wait done in 0 ms
+[1m00ac4048] pulse audio output debug: cannot synchronize start
+[1m00ac4048] pulse audio output warning: starting late (-22538 us)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1mb361d9d0] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[1mb361d9d0] freetype spu text debug: Building font databases.
+[1m00ac4048] main audio output warning: buffer too late (-73710 us): dropped
+[1m00ac4048] main audio output debug: playback too late (8249): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-146742 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] main audio output warning: buffer too late (-97722 us): dropped
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-88158 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-85351 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-77776 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-62646 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-62274 us): dropped
+[1m00ac4048] main audio output debug: playback too late (26607): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-174235 us)
+[1m00ac4048] main audio output warning: buffer too late (-69166 us): dropped
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-80633 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-66373 us): dropped
+[1m00ac4048] main audio output debug: playback too late (69867): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-199972 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-106123 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-87607 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-109069 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-90480 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-70824 us): dropped
+[1m00ac4048] main audio output debug: playback too late (53033): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-200621 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-77832 us): dropped
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-93987 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-83680 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-63962 us): dropped
+[1m00ac4048] main audio output debug: playback too late (59346): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-191776 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-94742 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-84316 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-84025 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-64418 us): dropped
+[1m00ac4048] main audio output debug: playback too late (63779): flushing buffers
+[1mb361d9d0] freetype spu text debug: Took -662727 microseconds
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-186120 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-93303 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-91908 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-87610 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-67996 us): dropped
+[1m00ac4048] main audio output debug: playback too late (53427): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output warning: starting late (-184561 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-95081 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-112892 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-93162 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-73445 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-62887 us): dropped
+[1m00ac4048] main audio output debug: playback too late (21628): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output warning: starting late (-167959 us)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: buffer too late (-87919 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-92007 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-91014 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-71367 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-61932 us): dropped
+[1m00ac4048] main audio output debug: inserting 373 zeroes
+[1mb361d9d0] main spu text debug: using text renderer module "freetype"
+[1mb364f2d8] main scale debug: looking for video converter module matching "any": 17 candidates
+[1m00ac4048] main audio output warning: buffer too late (-60386 us): dropped
+[1m00ac4048] main audio output debug: inserting 2525 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-61034 us): dropped
+[1m00ac4048] main audio output debug: inserting 1981 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-73651 us): dropped
+[1mb364f2d8] swscale scale debug: 32x32 (32x32) chroma: YUVA -> 16x16 (16x16) chroma: RGBA with scaling using Bicubic (good quality)
+[1m00ac4048] main audio output warning: buffer too late (-69002 us): dropped
+[1m00ac4048] main audio output debug: inserting 3843 zeroes
+[1mb364f2d8] main scale debug: using video converter module "swscale"
+[1mb3673388] main scale debug: looking for video converter module matching "any": 17 candidates
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output warning: buffer too late (-76469 us): dropped
+[1m00ac4048] main audio output debug: inserting 2092 zeroes
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output warning: buffer too late (-68782 us): dropped
+[1mb3673388] yuvp scale debug: YUVP to YUVA converter
+[1mb3673388] main scale debug: using video converter module "yuvp"
+[1mb3615808] main video output debug: Deinterlacing available
+[1mb3615808] main video output debug: deinterlace -1, mode auto, is_needed 0
+[1mb3616078] main window debug: looking for vout window module matching "any": 6 candidates
+[1m00ac4048] main audio output debug: inserting 2083 zeroes
+[1mb3616078] main window debug: no vout window modules matched
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output warning: buffer too late (-74377 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-63545 us): dropped
+[1m00ac4048] pulse audio output debug: underflow
+[1mb3615808] main video output debug: Opening vout display wrapper
+[1mb3677610] main vout display debug: looking for vout display module matching "any": 16 candidates
+[1m00ac4048] main audio output debug: inserting 3381 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-65219 us): dropped
+[1mb3677610] mmal_xsplitter vout display debug: >>> OpenMmalX11: MMAL,1280x720 [(0,0) 1280/720] sar:0/0
+[1mb3677da0] main generic debug: looking for vout display module matching "opengles2": 16 candidates
+[1m00ac4048] main audio output debug: inserting 2039 zeroes
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output warning: buffer too late (-78936 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-74169 us): dropped
+[1m00ac4048] main audio output debug: inserting 2834 zeroes
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output warning: buffer too late (-72472 us): dropped
+[1m00ac4048] main audio output debug: inserting 1728 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-78819 us): dropped
+[1m00ac4048] main audio output debug: inserting 1456 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-69657 us): dropped
+[1m00ac4048] main audio output debug: inserting 1493 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-64918 us): dropped
+[1m00ac4048] main audio output debug: inserting 1360 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-61119 us): dropped
+[1m00ac4048] main audio output debug: inserting 1374 zeroes
+[1mb3677da0] gles2 generic error: parent window not available
+[1mb3677da0] main generic debug: no vout display modules matched
+[1mb3677610] mmal_xsplitter vout display error: Failed to open Xsplitter:opengles2 module
+[1mb3677da0] main generic debug: looking for vout display module matching "xcb_x11": 16 candidates
+[1mb3677da0] xcb generic error: window not available
+[1mb3677da0] main generic debug: no vout display modules matched
+[1mb3677610] mmal_xsplitter vout display error: Failed to open Xsplitter:xcb_x11 module
+[1mb3677da0] main generic debug: looking for vout display module matching "mmal_vout": 16 candidates
+[1mb3677da0] mmal_vout generic debug: Display device: auto, qt=-1 id=-1 display=2
+[1mb3677da0] mmal_vout generic debug: Display transform: auto, mmal_display_transform=0
+[1mb3677da0] mmal_vout generic debug: WxH: 1280x720, Crop: 1280x720
+[1mb3677da0] mmal_vout generic debug: State=0x6
+[1mb3677da0] mmal_vout generic debug: HDMI: 800x480
+[1mb3677da0] mmal_vout generic debug: >>> OpenMmalVout: ok
+[1mb3677da0] main generic debug: using vout display module "mmal_vout"
+[1mb3677610] mmal_xsplitter vout display debug: R/G/B: 00000000/00000000/00000000
+[1mb3677610] mmal_xsplitter vout display debug: MMAL output found
+[1mb3677610] main vout display debug: using vout display module "mmal_xsplitter"
+[1mb3677da0] mmal_vout generic debug: vd_pool: fmt:1280x720,sar:0/0; source:1280x720
+[1mb3677da0] mmal_vout generic debug: vd_pool: fmt:1280x720,sar:0/0; source:1280x720
+[1mb3615808] main video output debug: original format sz 1280x720, of (0,0), vsz 1280x720, 4cc MMAL, sar 1:1, msk r0x0 g0x0 b0x0
+[1mb361d9d0] main spu text debug: removing module "freetype"
+[1mb361d9d0] main spu text debug: looking for text renderer module matching "any": 2 candidates
+[1mb3677610] main vout display debug: VoutDisplayEvent 'resize' 1280x720
+[1mb3677610] mmal_xsplitter vout display debug: Change size: 1280, 720: mmal_vout=0xb3677da0, want_mmal=1, fs=0
+[1mb361d9d0] freetype spu text debug: Building font databases.
+[1m00ac4048] main audio output warning: buffer too late (-98937 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-84625 us): dropped
+[1m00ac4048] main audio output warning: buffer too late (-74648 us): dropped
+[1m00ac4048] > 1497 >
+main audio output debug: inserting 3965 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-70773 us): dropped
+[1m00ac4048] main audio output debug: inserting 1020 zeroes
+[1m00ac4048] main audio output warning: buffer too late (-64641 us): dropped
+[1m00ac4048] main audio output debug: inserting 979 zeroes
+[1mb361d9d0] freetype spu text debug: Took -305949 microseconds
+[1mb361d9d0] main spu text debug: using text renderer module "freetype"
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1275 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1235 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1197 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1168 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1128 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1103 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1065 ms)
+[1mb3677610] main vout display debug: auto hiding mouse cursor
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 1035 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 996 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 985 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 950 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 908 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 867 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 833 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 799 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 765 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 725 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 713 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 673 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 632 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 592 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 564 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 530 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 494 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 455 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 438 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 397 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 361 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 326 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 299 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 258 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 231 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 192 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 161 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 123 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 91 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 52 ms)
+[1mb3615808] main video output warning: picture is too late to be displayed (missing 23 ms)
+[1m00ac4048] main audio output warning: playback too late (60707): up-sampling
+[1m00ac4048] main audio output warning: timing screwed (drift: 129283 us): stopping resampling
+[1m00ac4048] main audio output warning: playback too late (129988): up-sampling
+[1m00ac4048] main audio output warning: playback way too late (199791): flushing buffers
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: deferring start (1085991 us)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: deferring start (1051682 us)
+[1m00ac4048] pulse audio output debug: deferring start (1041557 us)
+[1m00ac4048] pulse audio output debug: deferring start (1009271 us)
+[1m00ac4048] pulse audio output debug: deferring start (1003991 us)
+[1m00ac4048] pulse audio output debug: deferring start (971803 us)
+[1m00ac4048] pulse audio output debug: deferring start (938719 us)
+[1m00ac4048] pulse audio output debug: deferring start (905506 us)
+[1m00ac4048] pulse audio output debug: deferring start (899646 us)
+[1m00ac4048] pulse audio output debug: deferring start (867021 us)
+[1m00ac4048] pulse audio output debug: deferring start (834878 us)
+[1m00ac4048] pulse audio output debug: deferring start (802151 us)
+[1m00ac4048] pulse audio output debug: deferring start (770112 us)
+[1m00ac4048] pulse audio output debug: deferring start (737646 us)
+[1m00ac4048] pulse audio output debug: deferring start (696204 us)
+[1m00ac4048] pulse audio output debug: deferring start (620525 us)
+[1m00ac4048] pulse audio output debug: deferring start (587510 us)
+[1m00ac4048] pulse audio output debug: deferring start (554966 us)
+[1m00ac4048] pulse audio output debug: deferring start (521819 us)
+[1m00ac4048] pulse audio output debug: deferring start (489947 us)
+[1m00ac4048] pulse audio output debug: deferring start (457244 us)
+[1m00ac4048] pulse audio output debug: deferring start (425122 us)
+[1m00ac4048] pulse audio output debug: deferring start (392255 us)
+[1m00ac4048] pulse audio output debug: deferring start (364390 us)
+[1m00ac4048] pulse audio output debug: deferring start (354411 us)
+[1m00ac4048] pulse audio output debug: deferring start (322065 us)
+[1m00ac4048] pulse audio output debug: deferring start (290162 us)
+[1m00ac4048] pulse audio output debug: deferring start (258487 us)
+[1m00ac4048] pulse audio output debug: deferring start (116784 us)
+[1m00ac4048] pulse audio output debug: deferring start (84855 us)
+[1m00ac4048] pulse audio output debug: deferring start (52813 us)
+[1m00ac4048] pulse audio output debug: deferring start (20750 us)
+[1m00ac4048] pulse audio output warning: starting late (-10494 us)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: playback way too early (-545163): playing silence
+[1m00ac4048] main audio output debug: inserting 26167 zeroes
+[1m00af9c28] mp4 demux debug: elst (1) gives 23000ms (movie)-> 23041ms (track)
+[1m00af9c28] mp4 demux debug: track[Id 0x1] using Sync Sample Box (stss)
+[1m00af9c28] mp4 demux debug: stss gives 552 --> 487 (sample number)
+[1m00af9c28] mp4 demux debug: seeking with 2729ms preroll (use input-fast-seek to avoid)
+[1m00af9c28] mp4 demux debug: elst (0) gives 20270ms (movie)-> 20291ms (track)
+[1m00af9c28] mp4 demux debug: elst (0) gives 20270ms (movie)-> 20270ms (track)
+[1m00af9c28] mp4 demux warning: recreate ES for track[Id 0x3]
+[1m00ad18d0] main input debug: Buffering 0%
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ad18d0] main input debug: Buffering 7%
+[1m00ad18d0] main input debug: Buffering 13%
+[1m00ad18d0] main input debug: Buffering 20%
+[1m00ad18d0] main input debug: Buffering 27%
+[1m00ad18d0] main input debug: Buffering 33%
+[1m00ad18d0] main input debug: Buffering 40%
+[1m00ad18d0] main input debug: Buffering 47%
+[1m00ad18d0] main input debug: Buffering 53%
+[1m00ad18d0] main input debug: Buffering 60%
+[1m00ad18d0] main input debug: Buffering 67%
+[1m00ad18d0] main input debug: Buffering 73%
+[1m00ad18d0] main input debug: Buffering 80%
+[1m00ad18d0] main input debug: Buffering 87%
+[1m00ad18d0] main input debug: Buffering 93%
+[1m00ad18d0] main input debug: Stream buffering done (3775 ms in 320 ms)
+[1m00f481f0] main decoder error: buffer deadlock prevented
+[1m00f6bc20] main decoder debug: end of audio preroll
+[1m00ac4048] pulse audio output debug: started
+[1m00ad18d0] main input debug: Decoder wait done in 136 ms
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] pulse audio output warning: starting late (-133010 us)
+[1m00ac4048] pulse audio output debug: started
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1m00ac4048] main audio output warning: playback too late (141648): up-sampling
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] pulse audio output debug: underflow
+[1m00ac4048] main audio output debug: resampling stopped (drift: 36534 us)
+[1m00f481f0] main decoder debug: end of video preroll
+^C[1m00a46b98] Traceback (most recent call last):
+main libvlc debug: exiting
+[1m00a46b98] main libvlc debug: removing all interfaces
+[1m00ad22c0] [cli] main interface debug: removing module "lua"
+[1m00ad22c0] [cli] lua interface error: Error loading script /usr/lib/arm-linux-gnueabihf/vlc/lua/intf/cli.luac: lua/intf/modules/host.lua:289: Interrupted.
+  File "/home/pi/Documents/VLCP.py", line 686, in <module>
+[1m00ad1160]     reset = main(vidpath)
+main interface debug: removing module "hotkeys"
+[1m00ac1d48] main interface debug: removing module "dbus"
+[1m00aa58a8] main playlist debug: destroying
+[1m00aa58a8] main playlist debug: deactivating the playlist
+[1m00aa58a8] main playlist debug: incoming request - stopping current input
+[1m00f481f0] main decoder debug: killing decoder fourcc `h264'
+[1m00f481f0] main decoder debug: removing module "mmal_codec"
+  File "/home/pi/Documents/VLCP.py", line 567, in main
+[1m00aa58a8] main playlist debug: saving a free vout
+[1m00aa58a8] main playlist debug: reusing provided vout
+[1m00f6bc20] main decoder debug: killing decoder fourcc `mp4a'
+[1m00f6bc20] main decoder debug: removing module "faad"
+[1m00ac4048] pulse audio output debug: underflow
+[1mb3916b38] main audio resampler debug: removing module "samplerate"
+[1mb390ee48]     end_close = player(sode)
+main audio filter debug: removing module "scaletempo"
+[1m00ac4048] pulse audio output debug: changing sink 0: alsa_output.platform-soc_sound.stereo-fallback (Built-in Audio Stereo)
+[1mb3906460] main volume debug: removing module "float_mixer"
+[1m00aa58a8] main playlist debug: keeping audio output
+[1m00af9c28] main demux debug: removing module "mp4"
+[1m00af9c28] mp4 demux debug: freeing all memory
+  File "/home/pi/Documents/VLCP.py", line 356, in player
+    time.sleep(0.1)
+KeyboardInterrupt
+
+[?2004h[01;32mpi@caelohm[00m:[01;34m~/Documents $[00m [1m00ad18d0] main input debug: Program doesn't contain anymore ES
+[1m00aef498] main stream debug: removing module "record"
+[1m00aef1f8] main stream debug: removing module "cache_read"
+[1m00aef018] main stream debug: removing module "filesystem"
+[1m00aa58a8] main playlist debug: dead input
+[1m00aa58a8] main playlist debug: nothing to play
+[1mb3615808] main video output debug: destroying useless vout
+[1mb3677610] main vout display debug: removing module "mmal_xsplitter"
+[1mb3677610] mmal_xsplitter vout display debug: <<< CloseMmalX11
+[1mb3677da0] main generic debug: removing module "mmal_vout"
+[1mb3677610] mmal_xsplitter vout display debug: >>> CloseMmalX11
+[1mb361d9d0] main spu text debug: removing module "freetype"
+[1mb3673388] main scale debug: removing module "yuvp"
+[1mb364f2d8] main scale debug: removing module "swscale"
+[1m00ac4048] main audio output debug: removing module "pulse"
+[1mb3639cb0] main playlist export debug: saving media library to file /home/pi/.local/share/vlc/ml.xspf.tmp2387
+[1mb3639cb0] main playlist export debug: looking for playlist export module matching "export-xspf": 4 candidates
+[1mb3639cb0] main playlist export debug: using playlist export module "export"
+[1mb3639cb0] main playlist export debug: removing module "export"
+[1m00aa58a8] main playlist debug: deleting item `Media Library'
+[1m00aa58a8] main playlist debug: deleting item `[MK] Food Wars! - 01 [BD 1080p][Hi10][Dual-Audio]'
+[1m00aa58a8] main playlist debug: deleting item `Playlist'
+[1m00a48f90] main keystore debug: removing module "memory"
+
+[?2004l[?2004h[01;32mpi@caelohm[00m:[01;34m~/Documents $[00m exit
+[?2004lexit
+
+Script done on 2022-03-26 10:44:26-06:00 [COMMAND_EXIT_CODE="130"]
