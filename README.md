@@ -1,5 +1,5 @@
 # raspi_terminal_button_interface
-Script to interface LCD screen connected to Raspberry Pi (Video Player) with four buttons (Red, Blue, Yellow, Green). Terminal Output helps guide button presses to select .mp4/.mkv files to play using VLC. [COMPLETED PROJECT]
+Script to interface LCD screen connected to Raspberry Pi (Video Player) with four buttons (Red, Blue, Yellow, Green). Terminal Output helps guide button presses to select .mp4/.mkv files to play using VLC. Videos sit on the SD card. [COMPLETED PROJECT]
 
 New implementations such as choosing the size of subtitle text, displaying when the skip length is changed, power from battery, and 3D printed or wood case would have been a nice addition.
 
