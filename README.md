@@ -1,7 +1,7 @@
 # raspi_terminal_button_interface
-Script to interface LCD screen connected to Raspberry Pi (Video Player) with four buttons (Red, Blue, Yellow, Green). Terminal Output helps guide button presses to select .mp4/.mkv files to play. [COMPLETED PROJECT]
+Script to interface LCD screen connected to Raspberry Pi (Video Player) with four buttons (Red, Blue, Yellow, Green). Terminal Output helps guide button presses to select .mp4/.mkv files to play using VLC. [COMPLETED PROJECT]
 
-Currently working on new implementations such as choosing the size of subtitle text, displaying when the skip length is changed, power from battery, and 3D printed or wood case.
+New implementations such as choosing the size of subtitle text, displaying when the skip length is changed, power from battery, and 3D printed or wood case would have been a nice addition.
 
 Did not end up finishing the hardware (creating a case, soldering everything together). Also, there is potential for omxplayer to be able to do the same thing as what I did with vlc (maybe even better). Also something that is pretty annoying about using a raspberry pi is 
 1. The subtitle display (without hardcoding into the videos) can made the video stutter every time a new subtitle is displayed. This could just be a vlc issue.
